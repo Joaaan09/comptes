@@ -70,15 +70,3 @@ El projecte està integrat amb **GitHub Actions** per executar automàticament e
 - `app/Http/Controllers/CompteController.php`: Controlador amb la lògica de negocis
 - `tests/Feature/CompteTest.php`: Tests de funcionalitat desenvolupats amb TDD
 
-## 📜 Llicència
-
-Aquest projecte és lliure i obert sota la llicència MIT.
-
----
-
-💡 **Projecte realitzat com a part del mòdul de Desenvolupament d'Aplicacions Web (DAW)**
-```
-
----
-
-Vols que t’ajudi a afegir aquest `README.md` al teu projecte i fer el commit?
