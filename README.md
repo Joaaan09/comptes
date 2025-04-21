@@ -1,61 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Clar que sí, Patró. Et deixo un exemple de `README.md` ben explicat i polit per aquest projecte de **Compte Corrent amb TDD en Laravel**:
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+📄 **`README.md`**
+```md
+# 💰 Projecte de Compte Corrent amb TDD (Laravel)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aquest projecte és una implementació d'un sistema de gestió de **comptes corrents** amb operacions d'**ingrés**, **retirada** i **transferència**, desenvolupat seguint la metodologia **TDD (Test Driven Development)** amb Laravel.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🧪 Funcionalitats
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- ✅ Crear un compte corrent amb saldo inicial 0
+- ✅ Ingressos controlats (màxim 6000€, amb 2 decimals)
+- ✅ Retirades amb validació de saldo i límits
+- ✅ Transferències amb límit diari i validacions completes
 
-## Learning Laravel
+## ⚙️ Tecnologies
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Laravel 10
+- PHP 8.2
+- SQLite (per testos)
+- PHPUnit (testing)
+- GitHub Actions (CI/CD)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🧾 Exemple de regles de negoci
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Un ingrés de 100€ en un compte buit = saldo 100€
+- No es poden fer ingressos negatius ni amb més de 2 decimals
+- No es pot retirar més del saldo disponible
+- No es poden transferir més de 3000€ en un mateix dia
 
-## Laravel Sponsors
+## 🚀 Com executar el projecte
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clona el repositori:
+   ```bash
+   git clone https://github.com/EL_TEU_USUARI/nom-del-repositori.git
+   cd nom-del-repositori
+   ```
 
-### Premium Partners
+2. Instal·la les dependències:
+   ```bash
+   composer install
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+3. Crea el fitxer `.env`:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+4. Crea la base de dades SQLite:
+   ```bash
+   touch database/database.sqlite
+   php artisan migrate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Executa els tests:
+   ```bash
+   php artisan test
+   ```
 
-## Code of Conduct
+## 🔁 Integració contínua
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+El projecte està integrat amb **GitHub Actions** per executar automàticament els tests cada vegada que es fa un `push` o una `pull request`.
 
-## Security Vulnerabilities
+## 📁 Estructura del projecte
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- `app/Models/Compte.php`: Model principal del compte corrent
+- `app/Http/Controllers/CompteController.php`: Controlador amb la lògica de negocis
+- `tests/Feature/CompteTest.php`: Tests de funcionalitat desenvolupats amb TDD
 
-## License
+## 📜 Llicència
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Aquest projecte és lliure i obert sota la llicència MIT.
+
+---
+
+💡 **Projecte realitzat com a part del mòdul de Desenvolupament d'Aplicacions Web (DAW)**
+```
+
+---
+
+Vols que t’ajudi a afegir aquest `README.md` al teu projecte i fer el commit?
